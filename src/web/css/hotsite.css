@@ -1,5 +1,5 @@
 
-* { font-family: 'Roboto', sans-serif; }
+/* * { font-family: 'Roboto', sans-serif; } */
 
 html, body {
     background-color: rgb(255, 255, 255);
@@ -15,6 +15,7 @@ html, body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* TOPO */
@@ -30,7 +31,15 @@ html, body {
     display: flex;
     align-items: center;
     font-size: 30px;
+    font-family: 'Pacifico', cursive;
+    color: rgb(167, 174, 206);
+    text-shadow: 1px 1px rgb(146, 146, 146);
 }
+
+.logo img {
+    padding: 8px;
+}
+
 .login {
     font-size: 18px;
 }
@@ -49,7 +58,6 @@ html, body {
     color: #fff;
 }
 
-
 /* SLOGAN */
 .slogan {
     flex-grow: 1;
@@ -63,3 +71,98 @@ html, body {
 
 .slogan h1 { font-size: 40px;}
 .slogan h3 { font-size: 22px;}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 549px) {
+    .slogan h1 {
+        font-size: 28px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .slogan h3 {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .login.desktop {
+        display: none;
+    }
+
+    .login.mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login.mobile a {
+        margin: 10px 0;
+    }
+
+    .mobile span {
+        display: none;
+    } 
+
+    .topo.desktop {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 550px) and (max-width: 899px){
+    .login {
+        display: block;
+    }
+
+    .login.mobile {
+        display: none;
+    }
+
+    .logo.mobile {
+        display: none;
+    }
+
+    .logo.maior {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .slogan h1 {
+        font-size: 60px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .slogan h3 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .desktop span {
+        font-size: 50px;
+    }
+
+    .login {
+        font-size: 25px;
+    }
+
+    .logo.normal {
+        display: none;
+    }
+
+    .logo.mobile {
+        display: none;
+    }
+
+    .login.mobile {
+        display: none;
+    }
+}
+
+
+@media screen and ( min-width: 301px ) and (max-width: 900px) {
+    .slogan {
+        text-align: center;
+    }
+}
+
