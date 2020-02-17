@@ -12,7 +12,10 @@
 <body>
 
     <div class="container">
-        <h1>Crie a sua conta!</h1>
+        <div class="row">
+            <img src="images/abacate.png" alt="">
+            <h1>Crie a sua conta!</h1>
+        </div>
         <hr>
         <form>
             <div class="row">
@@ -30,6 +33,150 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" class="form-control" placeholder="Mínimo 8 caracteres" id="password">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="password">Confirme sua senha</label>
+                        <input type="password" class="form-control" placeholder="Mínimo 8 caracteres" id="password">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="crn">Conselho Regional</label>
+                        <select class="form-control" id="crn">
+                            <option selected>Selecione</option>
+                            <option>CFN-1</option>
+                            <option>CFN-2</option>
+                            <option>CFN-3</option>
+                            <option>CFN-4</option>
+                            <option>CFN-5</option>
+                            <option>CFN-6</option>
+                            <option>CFN-7</option>
+                            <option>CFN-8</option>
+                            <option>CFN-9</option>
+                            <option>CFN-10</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="numeroCrn">Número de registro</label>
+                        <input type="number" class="form-control" id="numeroCrn">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="endereço">Endereço</label>
+                        <input type="text" class="form-control" id="endereço">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" class="form-control" id="cidade">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="estado">Estado</label>
+                        <input type="text" class="form-control" id="estado">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="cep">CEP</label>
+                        <input type="text" class="form-control" id="cep" placeholder="Digite apenas números">
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="nomeDisplay">Nome Display</label>
+                        <input type="text" class="form-control" placeholder="Como seu nome será mostrado para os pacientes" id="nomeDisplay">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    Insira o logo do seu consultório <span>(opcional)</span>
+                    <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Selecione um arquivo PNG ou JPG</label>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <div class="col">
+                    <label for="basic-url">Redes sociais <span>(opcional)</span></label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">https://facebook.com/</span>
+                        </div>
+                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label for="basic-url">Instagram</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">@</span>
+                        </div>
+                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    </div>
+                </div>
+
+                
+                <div class="col">
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp</label>
+                        <input type="tel" class="form-control" id="whatsapp" placeholder="Formato: +55(ddd)00000-0000">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-success btn-block">Salvar</button>
+                </div>
+                <div class="col">
+                    <button type="reset" class="btn btn-danger btn-block">Limpar</button>
+                </div>
+            </div>
+ 
     </div>
 
 
