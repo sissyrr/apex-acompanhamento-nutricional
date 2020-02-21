@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AN - Nutricionista</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/criar-conta.css">
 
 </head>
+
 <body>
 
     <div class="container">
-        <div class="row">
+        <div class="col topo">
             <img src="images/abacate.png" alt="">
-            <h1>Crie a sua conta!</h1>
+            <h1>Crie a sua conta</h1>
         </div>
-        <hr>
+
         <form>
+            <div class="row">
+                <div class="col">
+                    <h2>Dados Pessoais</h2>
+                    <hr>
+                </div>
+            </div>
+
+
             <div class="row">
                 <div class="col">
                     <div class="form-group">
@@ -87,9 +99,23 @@
 
             <div class="row">
                 <div class="col">
+                    <h2>Dados de Endereço</h2>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-md-10">
                     <div class="form-group">
-                        <label for="endereço">Endereço</label>
-                        <input type="text" class="form-control" id="endereço">
+                        <label for="address">Endereço</label>
+                        <input type="text" class="form-control" id="address">
+                    </div>
+                </div>
+
+                <div class="col col-md-2">
+                    <div class="form-group">
+                        <label for="number">Número</label>
+                        <input type="number" class="form-control" id="number">
                     </div>
                 </div>
             </div>
@@ -97,55 +123,86 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="cidade">Cidade</label>
-                        <input type="text" class="form-control" id="cidade">
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="form-group">
-                        <label for="estado">Estado</label>
-                        <input type="text" class="form-control" id="estado">
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="form-group">
                         <label for="cep">CEP</label>
-                        <input type="text" class="form-control" id="cep" placeholder="Digite apenas números">
+                        <input type="number" class="form-control" id="cep" placeholder="Digite apenas números">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="city">Cidade</label>
+                        <select class="form-control" id="city">
+                            <option selected>Selecione</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="state">Estado</label>
+                        <select class="form-control" id="state">
+                            <option selected>Selecione</option>
+                            <option>...</option>
+                        </select>
                     </div>
                 </div>
             </div>
-            <hr>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="maps">Como chegar?</label>
+                        <input type="url" class="form-control" id="maps" placeholder="Insira um link do Google Maps com o seu endereço">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <h2>Perfil</h2>
+                    <hr>
+                </div>
+            </div>
+
 
             <div class="row">
                 <div class="col">
                     <div class="form-group">
                         <label for="nomeDisplay">Nome Display</label>
-                        <input type="text" class="form-control" placeholder="Como seu nome será mostrado para os pacientes" id="nomeDisplay">
+                        <input type="text" class="form-control"
+                            placeholder="Como seu nome será mostrado para os pacientes" id="nomeDisplay">
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    Insira o logo do seu consultório <span>(opcional)</span>
-                    <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFile">
-                    <label class="custom-file-label" for="customFile">Selecione um arquivo PNG ou JPG</label>
+                    <div class="form-group">
+                        Insira o logo do seu consultório <span>(opcional)</span>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Selecione um arquivo PNG ou JPG</label>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            
             <div class="row">
                 <div class="col">
-                    <label for="basic-url">Redes sociais <span>(opcional)</span></label>
+                    <h6>Redes Sociais <span>(opcional)</span></h6>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <label for="basic-url">Facebook</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon3">https://facebook.com/</span>
+                            <span class="input-group-text" id="basic-addon3"><i class="fab fa-facebook"></i></span>
                         </div>
-                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        <input type="text" class="form-control" id="facebook" aria-describedby="basic-addon3"
+                            placeholder="/usuário">
                     </div>
                 </div>
 
@@ -153,36 +210,62 @@
                     <label for="basic-url">Instagram</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon3">@</span>
+                            <span class="input-group-text" id="basic-addon3"><i class="fab fa-instagram"></i></span>
                         </div>
-                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        <input type="text" class="form-control" id="instagram" aria-describedby="basic-addon3"
+                            placeholder="@usuário">
                     </div>
                 </div>
 
-                
                 <div class="col">
-                    <div class="form-group">
-                        <label for="whatsapp">WhatsApp</label>
-                        <input type="tel" class="form-control" id="whatsapp" placeholder="Formato: +55(ddd)00000-0000">
+                    <label for="basic-url">Twitter</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3"><i class="fab fa-twitter"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="twitter" aria-describedby="basic-addon3"
+                            placeholder="@usuário">
                     </div>
                 </div>
+
+                <div class="col">
+                    <label for="basic-url">WhatsApp</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3"><i class="fab fa-whatsapp"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="whatsapp" aria-describedby="basic-addon3"
+                            placeholder="+55(ddd)00000-0000">
+                    </div>
+                </div>
+
             </div>
 
             <div class="row">
                 <div class="col">
-                    <button type="submit" class="btn btn-success btn-block">Salvar</button>
+                    <button type="button" class="btn btn-success btn-block" onclick="cadastrarNutricionista()">Criar conta</button>
                 </div>
                 <div class="col">
                     <button type="reset" class="btn btn-danger btn-block">Limpar</button>
                 </div>
             </div>
- 
+
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script>"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"</script>
+
+    <script src="js/cadastro.js"></script>
+
 </body>
+
 </html>

@@ -42,3 +42,33 @@ html, body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+.obs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.obs p {
+    margin: 0;
+}
+
+.topo { 
+    display: flex;
+    justify-content: space-between;
+    color: rgb(0, 0, 0);
+
+    padding: 20px;
+    align-items: center;
+}
+
+.slogan {
+    flex-grow: 1;
+    color: rgb(0, 124, 56);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}   

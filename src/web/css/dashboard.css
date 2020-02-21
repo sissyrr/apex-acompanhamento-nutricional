@@ -1,0 +1,15 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.cards {
+    margin: 30px; 
+}
+
+.cards-espaco {
+    margin: 20px;
+}
+
+img {
+    text-shadow: #000 2px;
+}

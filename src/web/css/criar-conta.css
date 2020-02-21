@@ -3,10 +3,24 @@ body {
 }
 
 h1 {
+    font-size: 48px;
     padding: 4px;
     margin: 4px;
 }
 
 span {
     font-style: italic;
+}
+
+h2 {
+    color: #28a745;
+}
+
+.topo {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
 }
