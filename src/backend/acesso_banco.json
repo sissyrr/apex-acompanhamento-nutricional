@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "acompanhamento-nutricional2",
+  "private_key_id": "9e0b47b1c7ea65fd5b2e91db4eca5e21d407f42b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCua7rgRRqbRrax\nIAJGtUt40oIBfR7jCsRxekFLh1/rHofszLnTZhQOZZPALgJWFBnQ5ZJSoXG+c3iJ\n28LfdOW5hM8jefqMRhjk36pld8wqxHwOcYIBmNUFvPAmzRfwhzsNfGp37gkz241f\nLpmmoQRUKcJOZv2MfJNsKDUr9M5AdLt3NVQSVSoxD0hpqS2RG/dUi+M5NRRoFDLL\ni0PFtyG91/iBbf7vmb7VAmkqj881pZk1OwpwoUO5NR0O5mdijtDaPD6qHgS4OGFe\n6p/Xf2NQdXp+ipcrW/0uCEhxbLrYjmGmnpZ1sljCxveQClptgtzbA7BH2ZV5QAP1\n2HSj9gGVAgMBAAECggEAAnyMZOTyu5UZWRLLLF7hRkX1ajgEs4/ml1Cxt+OkdCGg\nb5Trk4vvR4wel60QPJsN5XLE9PUt9MrRxIVapvzdWYcjvNLg6l3g4rAdl3gmT0Ez\nimgHRm+yMJkJg2iqO9i60+3Rj+L8RFBrPT1Gi3tKcaZtm9iGTxnVQnqbsJZx/JE5\ntQ9kUNQgtOibj0cPJdLEZlloRXhz7lGoD6w6mHowYQ9I274h5uNeP9Jv6Zq5Nc2f\nUYRXgwg9TqReMpglVd+zZ8bTmko65FtdikSzbBcGy1Y5YrByyd+2vFisrkcs1gQd\nTSmYeNHFelcFZ3xBWdDfAf6qmok77062m8Lj6ShD8QKBgQDdwM0kjDNr7WrAuynV\nXUpk/fCl1GorhFL+kFReo6WjwhdHZTWUOOc1WJAkmLILB0V7ueQzbtvsRaIhfRcc\nRsnjtQbzFm9vEciaPVNjbtisUxndM5DTn0bF/qMwLwpmRg/izgliZEh60K5CxYi9\n61fZ7CUSevaVmh2P1NTAON2jtwKBgQDJW5sCNqB2HMPfjTZXpcANadb1rT60Tcpq\ngwC5kX3DjU2NrXw7njyjOs9YmZla0YiEbkeu8E14AyoBBVig/AOE2mFOZwaRpzot\n3c5bWbtgEb8nnIS16kgXil609vRYKQPtgfxofDWRWZzE25aFFL1XAuwTDwF7GrC5\nmLJgKwH9EwKBgCbtvtWoqypKPpBhCwIC45mBHurttEm5bBx2V+lZTy3FV/LXqKVB\nrA0oY/2YtMDM4PzMcGw7DO6YdtLsM89p+e04jWTFToCwHYg+NdJh1jXCTOsRL16H\nOpRtlFZUG75ClG1bgDg+pJ6y3bSpGs1EcGK4WvW4kmtG5+OlGEg6c2ZXAoGAfAZX\nqPpaxcWcBGNneH8Yl2p8xCBswgQ0THzagnKSI1Qy07RrFBG4SdZchrc9VUpAq0l+\nD8vl+6j/Q1e2qpnv1PHqA6/DxQ1a8YtwoqXXmynzMwPeXmqq8w0AnriJ8o944t8w\nyG7RU/D9defHg7stkJ21KVwRznC3L+pU3JVBCU8CgYAXjX432aPa0w/4A3dM+v85\nKw8Z4Xutu7ERd+4jSankASozV4f+RmmoouErabnzwyjpm4Az3I9/NjQsAZFHQcjs\n0TH/ZdYRanjlRcNX0fB5kitCs2uOQu3cqmSdfR4fARZ1/E9Krji1isAqO+vedr5N\n/paZYutghxROxwdnfkkmpg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-bfhvw@acompanhamento-nutricional2.iam.gserviceaccount.com",
+  "client_id": "101352968890471770587",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-bfhvw%40acompanhamento-nutricional2.iam.gserviceaccount.com"
+}

@@ -108,7 +108,7 @@ html, body {
     }
 }
 
-@media screen and (min-width: 550px) and (max-width: 899px){
+@media screen and (min-width: 550px) and (max-width: 1999px){
     .login {
         display: block;
     }
@@ -126,7 +126,7 @@ html, body {
     }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 2000px) {
     .slogan h1 {
         font-size: 60px;
         padding: 20px;
@@ -160,7 +160,7 @@ html, body {
 }
 
 
-@media screen and ( min-width: 301px ) and (max-width: 900px) {
+@media screen and ( min-width: 301px ) and (max-width: 2000px) {
     .slogan {
         text-align: center;
     }

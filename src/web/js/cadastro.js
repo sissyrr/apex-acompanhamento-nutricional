@@ -20,36 +20,29 @@ const $whatsapp = document.getElementById('whatsapp')
 
 
 function cadastrarNutricionista() {
-    const dadosEnvio = {
-        nome: $name.value,
-        sobrenome: $lastName.value,
-        email: $email.value,
-        senha: $password.value,
-        confirme_senha: $repeatPassword.value,
-        conselho_regional: $crn.value,
-        numero_registro: $numeroCrn.value,
-        endereco: $address.value,
-        numero_res: $numero.value,
-        cep: $cep.value,
-        cidade: $city.value,
-        estado: $state.value,
-        link_maps: $maps.value,
-        nome_display: $nomeDisplay.value,
-        logo: $logo.value,
-        facebook: $facebook.value,
-        instagram: $instagram.value,
-        twitter: $twitter.value,
-        whatsapp: $whatsapp.value
-    }
+  const dadosEnvio = {
+    nome: $name.value,
+    sobrenome: $lastName.value,
+    email: $email.value,
+    senha: $password.value,
+    confirme_senha: $repeatPassword.value,
+    conselho_regional: $crn.value,
+    numero_registro: $numeroCrn.value,
+    endereco: $address.value,
+    numero_res: $numero.value,
+    cep: $cep.value,
+    cidade: $city.value,
+    estado: $state.value,
+    link_maps: $maps.value,
+    nome_display: $nomeDisplay.value,
+    logo: $logo.value,
+    facebook: $facebook.value,
+    instagram: $instagram.value,
+    twitter: $twitter.value,
+    whatsapp: $whatsapp.value
+  }
 
-    const configuracaoRequest = {
-        method: 'POST',
-        body: JSON.stringify(dadosEnvio),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
-      }
-
-    fetch('http://localhost:3000/nutricionista', configuracaoRequest)
+  axios
+    .post('http://localhost:3000/nutricionistas', dadosEnvio)
+    .then(( {data} ) => console.log(data))
 }
