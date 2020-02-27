@@ -42,7 +42,27 @@ function cadastrarNutricionista() {
     whatsapp: $whatsapp.value
   }
 
-  axios
+  if (
+    !dadosEnvio.nome || 
+    !dadosEnvio.sobrenome ||
+    !dadosEnvio.email ||
+    !dadosEnvio.senha ||
+    !dadosEnvio.confirme_senha ||
+    !dadosEnvio.conselho_regional ||
+    !dadosEnvio.numero_registro ||
+    !dadosEnvio.endereco ||
+    !dadosEnvio.numero_res ||
+    !dadosEnvio.cep ||
+    !dadosEnvio.cidade ||
+    !dadosEnvio.estado ||
+    !dadosEnvio.link_maps ||
+    !dadosEnvio.nome_display
+    ) {
+    alert('Você precisa preencher todos os campos obrigatórios!')
+  } else {
+    axios
     .post('http://localhost:3000/nutricionistas', dadosEnvio)
     .then(( {data} ) => console.log(data))
+  }
+  
 }
