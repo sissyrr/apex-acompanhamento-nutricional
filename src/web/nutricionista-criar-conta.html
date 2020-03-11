@@ -65,7 +65,8 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="password">Confirme sua senha*</label>
-                        <input type="password" class="form-control" placeholder="Mínimo 8 caracteres" id="password">
+                        <input type="password" class="form-control" placeholder="Mínimo 8 caracteres"
+                            id="confirmePassword">
                     </div>
                 </div>
             </div>
@@ -106,10 +107,24 @@
             </div>
 
             <div class="row">
-                <div class="col col-md-10">
+                <div class="col col-md-4">
                     <div class="form-group">
-                        <label for="address">Endereço*</label>
-                        <input type="text" class="form-control" id="address">
+                        <label for="cep">CEP*</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-secondary" type="button"
+                                    onclick="consultarCep()">Consulte CEP</button>
+                            </div>
+                            <input type="text" class="form-control" placeholder="" id="cep"
+                                aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-md-6">
+                    <div class="form-group">
+                        <label for="street">Rua*</label>
+                        <input type="text" class="form-control" id="street">
                     </div>
                 </div>
 
@@ -122,28 +137,27 @@
             </div>
 
             <div class="row">
-                <div class="col">
+                <div class="col col-md-4">
                     <div class="form-group">
-                        <label for="cep">CEP*</label>
-                        <input type="number" class="form-control" id="cep" placeholder="Digite apenas números">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="city">Cidade*</label>
-                        <select class="form-control" id="city">
-                            <option selected>Selecione</option>
-                            <option>...</option>
-                        </select>
+                        <label for="neighborhood">Bairro*</label>
+                        <input type="text" class="form-control" id="neighborhood">
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="form-group">
                         <label for="state">Estado*</label>
-                        <select class="form-control" id="state">
-                            <option selected>Selecione</option>
-                            <option>...</option>
+                        <select class="form-control" id="state" onchange="buscarCidades()">
+                            <option selected>Selecione...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="city">Cidade*</label>
+                        <select class="form-control" id="city">
+                            <option selected>Selecione o estado...</option>
                         </select>
                     </div>
                 </div>
@@ -153,7 +167,8 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="maps">Como chegar?*</label>
-                        <input type="url" class="form-control" id="maps" placeholder="Insira um link do Google Maps com o seu endereço">
+                        <input type="url" class="form-control" id="maps"
+                            placeholder="Insira um link do Google Maps com o seu endereço">
                     </div>
                 </div>
             </div>
@@ -244,12 +259,97 @@
 
             <div class="row">
                 <div class="col">
-                    <button type="button" class="btn btn-success btn-block" onclick="cadastrarNutricionista()">Criar conta</button>
+                    <button type="button" class="btn btn-success btn-block" onclick="cadastrarNutricionista()">Criar
+                        conta</button>
                 </div>
                 <div class="col">
                     <button type="reset" class="btn btn-danger btn-block">Limpar</button>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="salvoModal" tabindex="-1" role="dialog" aria-labelledby="salvoModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header modal-linhas">
+                            <h5 class="modal-title" id="salvoModalLabel">Você foi cadastrado com sucesso!</h5>
+                        </div>
+                        <div class="modal-footer modal-linhas">
+                            <button type="button" class="btn btn-success">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="erroModal" tabindex="-1" role="dialog" aria-labelledby="erroModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header modal-linhas">
+                            <h5 class="modal-title" id="salvoModalLabel">Erro ao salvar, tente novamente!</h5>
+                        </div>
+                        <div class="modal-footer modal-linhas">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="camposModal" tabindex="-1" role="dialog" aria-labelledby="camposModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="camposModalLabel">Atenção</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p>Você precisa preencher todos os campos obrigatórios!</p>
+                        </div>
+                        <div class="modal-footer modal-linhas">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="senhasModal" tabindex="-1" role="dialog" aria-labelledby="senhasLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="senhasLabel">Atenção</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p>As senhas não conferem!</p>
+                        </div>
+                        <div class="modal-footer modal-linhas">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="cepNaoEncontrado" tabindex="-1" role="dialog" aria-labelledby="cepNaoEncontradoLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="cepNaoEncontrado">Atenção</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p>O CEP informado não existe!</p>
+                        </div>
+                        <div class="modal-footer modal-linhas">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
 
     </div>
 
@@ -266,8 +366,10 @@
     <script>"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"</script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+    <script src="js/cadastro-campos.js"></script>
     <script src="js/cadastro.js"></script>
-    
+    <script src="js/consultar-cep.js"></script>
+
 
 </body>
 

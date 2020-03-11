@@ -5,7 +5,7 @@ const router = Router()
 
 router.post('/', function (req, res) {
     const dadosNutricionista = req.body
-    service.salvarNutricionista(dadosNutricionista)
+    service.salvarNutricionistas(dadosNutricionista)
 
     res.sendStatus(204)
 })
