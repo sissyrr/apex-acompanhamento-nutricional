@@ -13,7 +13,10 @@ function Hotsite() {
                     alt="Circle right"
                 />
                 
-                <LoginButton to="/" outlined > <FaUserLock /> ENTRAR</LoginButton>
+                <LoginButton to="/login" outlined > 
+                <FaUserLock /> 
+                <span style={{ margin: '0 10px'}}>ENTRAR</span>
+                </LoginButton>
             </RightCircle>
 
             <BottomLeftCircle src={`${process.env.PUBLIC_URL}/assets/images/Hotsite-circle-bottom-left.svg`}
@@ -23,7 +26,7 @@ function Hotsite() {
             <TextoPrincipal>
                 <TituloHotsite>Acompanhamento Nutricional Personalizado</TituloHotsite>
                 <SubtituloHotsite>Melhore a sua saúde e seu bem estar sem sair de casa!</SubtituloHotsite>
-                <CadastroButton to="/">CADASTRE-SE</CadastroButton>
+                <CadastroButton to="/create-account">CADASTRE-SE</CadastroButton>
             </TextoPrincipal>
 
             <HotsiteImage src={`${process.env.PUBLIC_URL}/assets/images/Hotsite-image.svg`}

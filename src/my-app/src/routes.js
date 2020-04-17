@@ -7,19 +7,21 @@ import {
 
 // Páginas disponíveis
 import { Hotsite } from './pages/Hotsite'
+import { CreateAccount } from './pages/CreateAccount'
 
 // Páginas habilitadas
 function Routes() {
     return (
         <Router>
-
             <Switch>
+                <Route path="/create-account">
+                    <CreateAccount />
+                </Route>
+
                 <Route path="/">
                   <Hotsite />
                 </Route>
             </Switch>
-
-
         </Router>)
 }
 

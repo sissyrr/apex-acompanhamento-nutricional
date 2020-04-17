@@ -1,5 +1,17 @@
 import React from 'react'
 
-function CreateAccount () {
-    
+import { WithLogo } from '../../components/Page/WithLogo'
+import { NutriRegister } from '../../components/NutriRegister'
+import { Container } from './styles'
+
+function CreateAccount() {
+    return (
+        <WithLogo>
+            <Container>
+            <NutriRegister />
+            </Container>
+        </WithLogo>
+    )
 }
+
+export { CreateAccount }
