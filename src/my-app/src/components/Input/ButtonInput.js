@@ -1,5 +1,5 @@
 import React from 'react'
-import { InputGroup, Input, Label, InputGroupAddon} from 'reactstrap'
+import { InputGroup, Input, Label, InputGroupAddon } from 'reactstrap'
 
 import { ButtonInputContainer } from './styles'
 
@@ -9,13 +9,13 @@ function randomId() {
     return Math.floor(Math.random() * 1000) + 1
 }
 
-function ButtonInput({ label, id, type = "text", placeholder, left, right }) {
+function ButtonInput({ label, id, type = "text", placeholder, left, right, onPress, onChangeText, value}) {
     const newID = id ? id : randomId()
 
-    function removeBorderRadius () {
+    function removeBorderRadius() {
         return left
-        ? { borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }
-        : { borderTopRightRadius: 0, borderBottomRightRadius: 0 }
+            ? { borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }
+            : { borderTopRightRadius: 0, borderBottomRightRadius: 0 }
     }
 
     return (
@@ -25,16 +25,28 @@ function ButtonInput({ label, id, type = "text", placeholder, left, right }) {
             <InputGroup>
                 {left && (
                     <InputGroupAddon addonType="prepend">
-                    <Button outlined style={{ padding: '5px'}}>{left}</Button>
+                        <Button
+                            outlined
+                            style={{ padding: '5px' }}
+                            onClick={onPress}
+                        >
+                            {left}
+                        </Button>
                     </InputGroupAddon>
                 )}
 
-                <Input id={newID} placeholder={placeholder} style={removeBorderRadius()} />
+                <Input id={newID} placeholder={placeholder} style={removeBorderRadius()} onChange={(event) => { onChangeText(event.target.value) }} value={value}/>
 
                 {right && (
-                   <InputGroupAddon addonType="apend">
-                   <Button outlined style={{ padding: '5px'}}>{right}</Button>
-                   </InputGroupAddon>
+                    <InputGroupAddon addonType="apend">
+                        <Button
+                            outlined
+                            style={{ padding: '5px' }}
+                            onClick={onPress}
+                        >
+                            {right}
+                        </Button>
+                    </InputGroupAddon>
                 )}
             </InputGroup>
         </ButtonInputContainer>
