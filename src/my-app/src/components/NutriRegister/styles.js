@@ -25,9 +25,11 @@ export const CadastroButton = styled(Button)`
     font-weight: 600;
     font-size: 22px;
     line-height: 48px;
+    margin-bottom: 10px;
 `
 export const VoltarButton = styled(Button)`
     font-weight: 600;
     font-size: 22px;
     line-height: 48px;
+    margin-bottom: 10px;
 `
