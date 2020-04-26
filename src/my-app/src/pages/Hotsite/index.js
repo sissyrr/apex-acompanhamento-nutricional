@@ -12,10 +12,10 @@ function Hotsite() {
                 <img src={`${process.env.PUBLIC_URL}/assets/images/Hotsite-circle-right.svg`}
                     alt="Circle right"
                 />
-                
-                <LoginButton to="/login" outlined > 
-                <FaUserLock /> 
-                <span style={{ margin: '0 10px'}}>ENTRAR</span>
+
+                <LoginButton to="/login" outlined >
+                    <FaUserLock />
+                    <span style={{ margin: '0 10px' }}>ENTRAR</span>
                 </LoginButton>
             </RightCircle>
 

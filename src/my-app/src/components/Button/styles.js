@@ -6,6 +6,7 @@ const Link = styled(RouterLink)`
     color: ${({ outlined, isDark }) => outlined ? isDark ? '#3F3D56;' : '#00B049' : '#fff'};
     background: ${({ outlined }) => outlined ? '#fff' : '#00B049'};
     border: 3px solid ${({ outlined, isDark }) => outlined ? isDark ? '#3F3D56;' : '#00B049' : '#fff'};
+    font-weight: 600;
     
     padding: 8px;
     width: 100%;
@@ -24,6 +25,7 @@ const StyledButton = styled.button`
     color: ${({ outlined, isDark }) => outlined ? isDark ? '#3F3D56;' : '#00B049' : '#fff'};
     background: ${({ outlined }) => outlined ? '#fff' : '#00B049'};
     border: 3px solid ${({ outlined, isDark }) => outlined ? isDark ? '#3F3D56;' : '#00B049' : '#fff'};
+    font-weight: 600;
     
     padding: 8px;
     width: 100%;

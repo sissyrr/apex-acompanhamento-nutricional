@@ -1,14 +1,12 @@
 import React from 'react'
-
 import { Container } from './styles'
 
-function Blank ({ children }) {
+function Card({children}) {
     return (
         <Container>
             { children }
         </Container>
     )
-
 }
 
-export { Blank }
+export { Card }

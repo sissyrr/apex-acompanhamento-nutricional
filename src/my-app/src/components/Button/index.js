@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Link, StyledButton } from './styles'
 
-function Button({ to, onClick = () => {} ,outlined, children, isDark, type = "Link", ...rest }) {
+function Button({ to, onClick = () => {} ,outlined, children, isDark, type = "link", ...rest }) {
     if (type === 'link') {
         return (
             <Link

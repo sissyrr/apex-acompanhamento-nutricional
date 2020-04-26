@@ -4,12 +4,17 @@ import Swal from 'sweetalert2'
 
 import { FaFacebookF, FaTwitter, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
+import { useHistory } from 'react-router-dom'
+import { saveNutri } from '../../services/nutri-save.js'
+
 import { Select } from '../Select'
 import { LabelInput, IconInput, ButtonInput } from '../Input'
 import { FormContainer, Row, Space, CadastroButton, VoltarButton, Fieldset, Legend } from './styles'
 
 
+
 function NutriRegister() {
+    const history = useHistory()
     const [states, setStates] = useState()
     const [cities, setCities] = useState()
     const [selectedStateInitials, setStateInitials] = useState()
@@ -143,6 +148,31 @@ function NutriRegister() {
 
     function handleSubmit(e) {
         camposObrigatorios()
+
+        // salvar informações
+        saveNutri(data)
+            .then(() => {
+                Swal.fire({
+                    title: 'Parabéns!',
+                    text: "Cadastro realizado com sucesso.",
+                    icon: 'success',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
+                  }).then((result) => {
+                    if (result.value) {
+                        history.push('/')
+                    }
+                  })
+                
+            })
+            .catch(() => {
+                Swal.fire(
+                    'Ops!',
+                    'Não conseguimos salvar os dados. Tente novamente.',
+                    'error'
+                )
+            })
+
         e.preventDefault()
     }
 
