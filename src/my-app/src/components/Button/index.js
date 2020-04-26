@@ -1,17 +1,34 @@
 import React from 'react'
 
-import { Link } from './styles'
+import { Link, StyledButton } from './styles'
 
-function Button({ to, outlined, children, isDark, ...rest }) {
-    return <Link
-        {...rest}
-        to={to}
-        outlined={outlined}
-        isDark={isDark}
-        {...rest}
+function Button({ to, onClick = () => {} ,outlined, children, isDark, type = "Link", ...rest }) {
+    if (type === 'link') {
+        return (
+            <Link
+                {...rest}
+                to={to}
+                outlined={outlined}
+                isDark={isDark}
+                {...rest}
+            >
+                {children}
+            </Link>
+        )
+
+    }
+
+    return (
+        <StyledButton
+            outlined={outlined}
+            isDark={isDark}
+            onClick={onClick}
+            type={type}
+            {...rest}
         >
-        {children}
-    </Link>
+            {children}
+        </StyledButton>
+    )
 
 }
 

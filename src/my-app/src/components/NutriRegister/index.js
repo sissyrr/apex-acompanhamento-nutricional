@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 import { FaFacebookF, FaTwitter, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
@@ -95,6 +96,14 @@ function NutriRegister() {
                 setStateInitials(foundData.uf)
                 setDisabled(true)
             })
+
+            .catch(() => {
+                Swal.fire(
+                    'Que pena!',
+                    'Não encontramos o seu CEP. Tente novamente ou preencha os dados manualmente.',
+                    'error'
+                )
+            })
     }
 
     function handleStateChange(id) {
@@ -103,18 +112,48 @@ function NutriRegister() {
             ...data,
             state: id
         })
-        
+
     }
 
+    function passwordsAreEqual() {
+        return data.password === data.repeatPassword
+    }
+
+    function camposObrigatorios() {
+        const isFormValid = !!data.name &&
+        !!data.lastName &&
+        !!data.email &&
+        !!data.password &&
+        !!data.repeatPassword &&
+        !!data.cep &&
+        !!data.neighborhood &&
+        !!data.street &&
+        !!data.number &&
+        !!data.state &&
+        !!data.city
+
+        if (!isFormValid) {
+            Swal.fire(
+                'Ops!',
+                'Parece que você não preencheu alguns dados obrigatórios.',
+                'error'
+            )
+        }
+    }
+
+    function handleSubmit(e) {
+        camposObrigatorios()
+        e.preventDefault()
+    }
 
     return (
-        <FormContainer>
+        <FormContainer onSubmit={ handleSubmit } >
             <Fieldset>
                 <Legend>Crie sua conta</Legend>
 
                 <Row>
                     <LabelInput
-                        label="Nome"
+                        label="Nome*"
                         id="name"
                         placeholder="João"
                         value={data.name}
@@ -124,11 +163,12 @@ function NutriRegister() {
                     <Space />
 
                     <LabelInput
-                        label="Sobrenome"
+                        label="Sobrenome*"
                         id="lastName"
                         placeholder="Silva"
                         value={data.lastName}
                         onChangeText={(text) => { onChangeValue('lastName', text) }}
+                        // invalid={!camposObrigatorios()}
                     />
                 </Row>
 
@@ -144,31 +184,36 @@ function NutriRegister() {
                     <Space />
 
                     <LabelInput
-                        label="Email"
+                        type="email"
+                        label="Email*"
                         id="email"
                         placeholder="joao@email.com"
                         value={data.email}
                         onChangeText={(text) => { onChangeValue('email', text) }}
+                        // invalid={!camposObrigatorios()}
                     />
                 </Row>
 
                 <Row>
                     <LabelInput
-                        label="Senha"
+                        type="password"
+                        label="Senha*"
                         id="password"
-                        placeholder="********"
                         value={data.password}
                         onChangeText={(text) => { onChangeValue('password', text) }}
+                        // invalid={!camposObrigatorios()}
                     />
 
                     <Space />
 
                     <LabelInput
-                        label="Repetir Senha"
+                        type="password"
+                        label="Repetir Senha*"
                         id="repeatPassword"
-                        placeholder="********"
                         value={data.repeatPassword}
                         onChangeText={(text) => { onChangeValue('repeatPassword', text) }}
+                        invalid={!passwordsAreEqual()}
+                        helpText={!passwordsAreEqual() ? "As senhas não são iguais" : null}
                     />
                 </Row>
 
@@ -179,74 +224,80 @@ function NutriRegister() {
 
                 <Row>
                     <ButtonInput
-                        label="CEP"
+                        label="CEP*"
                         right="Consultar"
                         id="cep"
                         onPress={getByCEP}
                         onChangeText={(text) => { onChangeValue('cep', text) }}
                         value={data.cep}
+                        // invalid={!camposObrigatorios()}
                     />
 
                     <Space />
 
                     <LabelInput
-                        label="Bairro"
+                        label="Bairro*"
                         id="neighborhood"
                         value={data.neighborhood}
                         onChangeText={(text) => { onChangeValue('neighborhood', text) }}
                         disabled={disabled}
-                        
+                        // invalid={!camposObrigatorios()}
+
                     />
                 </Row>
 
                 <Row>
                     <LabelInput
-                        label="Rua"
+                        label="Rua*"
                         id="street"
                         value={data.street} disabled={disabled}
                         onChangeText={(text) => { onChangeValue('street', text) }}
+                        // invalid={!camposObrigatorios()}
                     />
 
                     <Space />
 
                     <LabelInput
-                        label="Número"
+                        label="Número*"
                         id="number"
                         value={data.number}
                         onChangeText={(text) => { onChangeValue('number', text) }}
+                        // invalid={!camposObrigatorios()}
                     />
                 </Row>
 
                 <Row>
                     <Select
-                        label="Estado"
+                        label="Estado*"
                         id="state"
                         options={states}
                         onSelect={handleStateChange}
                         value={data.state}
                         disabled={disabled}
+                        // invalid={!camposObrigatorios()}
                     />
 
                     <Space />
 
                     <Select
-                        label="Cidade"
+                        label="Cidade*"
                         id="city"
                         options={cities}
                         value={data.city}
                         disabled={disabled}
                         onSelect={(IBGECode) => onChangeValue('city', IBGECode)}
+                        // invalid={!camposObrigatorios()}
                     />
                 </Row>
 
                 <Row>
 
-                    <LabelInput 
-                    label="Como chegar" 
-                    id="maps" 
-                    placeholder="Copiar seu endereço do Google" 
-                    value={data.maps} 
-                    onChangeText={(text) => { onChangeValue('maps', text) }}
+                    <LabelInput
+                        label="Como chegar"
+                        id="maps"
+                        placeholder="Copiar seu endereço do Google"
+                        value={data.maps}
+                        onChangeText={(text) => { onChangeValue('maps', text) }}
                     />
 
                 </Row>
@@ -303,7 +354,7 @@ function NutriRegister() {
             <Row>
                 <VoltarButton to="/" outlined isDark>VOLTAR</VoltarButton>
                 <Space />
-                <CadastroButton to="/">CADASTRAR</CadastroButton>
+                <CadastroButton type="submit" to="/" >CADASTRAR</CadastroButton>
 
             </Row>
 

@@ -28,6 +28,7 @@ function ButtonInput({ label, id, type = "text", placeholder, left, right, onPre
                         <Button
                             outlined
                             style={{ padding: '5px' }}
+                            type="button"
                             onClick={onPress}
                         >
                             {left}
@@ -43,6 +44,7 @@ function ButtonInput({ label, id, type = "text", placeholder, left, right, onPre
                             outlined
                             style={{ padding: '5px' }}
                             onClick={onPress}
+                            type="button"
                         >
                             {right}
                         </Button>
