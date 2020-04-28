@@ -17,7 +17,7 @@ function PasswordForm() {
                 {/* <Logo /> */}
                 <Div>
                     <Titulo>Esqueceu sua senha?</Titulo>
-                    <Subtitulo>Digite o email cadastrado para redefinir sua senha</Subtitulo>
+                    <Subtitulo>Digite o email cadastrado para criar uma senha nova</Subtitulo>
                 </Div>
 
                 <Form>
@@ -30,7 +30,7 @@ function PasswordForm() {
                     <Space />
 
                     <Div>
-                        <Button type="submit" to="/">ENVIAR NOVA SENHA</Button>
+                        <Button type="submit" to="/">REDEFINIR SENHA</Button>
                     </Div>
                 </Form>
             </Container>
