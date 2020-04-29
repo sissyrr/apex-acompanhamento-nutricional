@@ -39,6 +39,7 @@ function LoginForm() {
 
                 <DivSwitch>
                     <Switch
+                    label="Sou nutricionista"
                     />
                 </DivSwitch>
 

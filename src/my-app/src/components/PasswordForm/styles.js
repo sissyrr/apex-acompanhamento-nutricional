@@ -20,7 +20,7 @@ export const Div = styled.div`
     align-items: center;
     text-align: center;
 `
-export const Cadastro = styled(RouterLink)`
+export const GoToLogin = styled(RouterLink)`
     color: #3F3D56;
     width: 100%;
     font-size: 13px;
@@ -45,4 +45,13 @@ export const Subtitulo = styled.p`
     font-weight: 300;
     font-size: 16px;
     line-height: 42px;
+`
+export const Pergunta = styled.div`
+    color: #3F3D56;
+    width: 100%;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 27px;
+    margin-top: 6px;
 `

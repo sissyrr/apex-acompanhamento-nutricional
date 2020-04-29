@@ -2,19 +2,17 @@ import React from 'react'
 
 import { AiOutlineMail, AiOutlineKey } from 'react-icons/ai';
 
-import { Logo } from './Logo'
 import { Button } from '../Button'
 import { Card } from '../Card'
 import { IconInput } from '../Input/IconInput'
 
-import { Form, Space, Container, Titulo, Div, Subtitulo } from './styles'
+import { Form, Space, Container, Titulo, Div, Subtitulo, Pergunta, GoToLogin } from './styles'
 
 
 function PasswordForm() {
     return (
         <Card>
             <Container>
-                {/* <Logo /> */}
                 <Div>
                     <Titulo>Esqueceu sua senha?</Titulo>
                     <Subtitulo>Digite o email cadastrado para criar uma senha nova</Subtitulo>
@@ -31,6 +29,7 @@ function PasswordForm() {
 
                     <Div>
                         <Button type="submit" to="/">REDEFINIR SENHA</Button>
+                        <Pergunta>Já possui a senha? <GoToLogin to="/login">Faça seu login</GoToLogin></Pergunta>
                     </Div>
                 </Form>
             </Container>

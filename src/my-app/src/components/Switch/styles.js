@@ -20,7 +20,6 @@ export const StyledSwitch =  styled(CustomInput)`
         padding: 7px !important;
         background-color: #fff !important;
         border: #fff solid 1px !important;
-
     }
 
     input:checked~label::after {

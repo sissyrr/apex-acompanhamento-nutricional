@@ -12,7 +12,7 @@ function Switch({ type="switch", label, id, name, ...rest}) {
     return (
         <StyledSwitch
         type={type}
-        label="Sou uma nutricionista"
+        label={label}
         id={newID}
         name={newName} 
         {...rest}
