@@ -1,11 +1,14 @@
 import React from 'react'
 
+import { useVerifyAuthentication } from '../../routes'
 import { Blank } from '../../components/Page/Blank'
 import { LoginForm } from '../../components/LoginForm'
 
 import { TopRightCircle, BottomRightCircle, LeftCircle, Container } from './styles'
 
 function Login() {
+    useVerifyAuthentication()
+
     return (
         <Blank>
             <Container>
@@ -22,7 +25,6 @@ function Login() {
                 />
 
                 <LoginForm />
-
             </Container>
         </Blank>
     )

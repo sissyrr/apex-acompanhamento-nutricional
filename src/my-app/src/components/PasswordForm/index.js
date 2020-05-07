@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AiOutlineMail, AiOutlineKey } from 'react-icons/ai';
+import { AiOutlineMail } from 'react-icons/ai';
 
 import { Button } from '../Button'
 import { Card } from '../Card'

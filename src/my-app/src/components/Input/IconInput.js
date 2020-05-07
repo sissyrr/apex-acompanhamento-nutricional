@@ -44,7 +44,7 @@ function IconInput({ label, id, type = "text", placeholder, left, right, value, 
                     </StyledGroupAddon>
                 )}
 
-                <StyledInput type={type} id={newID} placeholder={placeholder} />
+                <StyledInput type={type} id={newID} value={value} placeholder={placeholder} onChange={(event) => { onChangeText(event.target.value) }} />
                 
                 {right && (
                     <StyledGroupAddon addonType="apend">

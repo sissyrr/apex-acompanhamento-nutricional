@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 import { Link as RouterLink } from 'react-router-dom'
 
+import { Button } from '../Button'
+
 export const Container = styled.div`
     width: 100%;
     height: 100%;
@@ -65,5 +67,10 @@ export const Pergunta = styled.div`
     line-height: 27px;
     margin-top: 6px;
 `
-
+export const CadastroButton = styled(Button)`
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 48px;
+    margin-bottom: 10px;
+`
 

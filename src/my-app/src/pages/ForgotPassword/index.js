@@ -1,11 +1,14 @@
 import React from 'react'
 
+import { useVerifyAuthentication } from '../../routes'
 import { WithLogo } from '../../components/Page/WithLogo'
 import { PasswordForm } from '../../components/PasswordForm'
 
-import { TopRightCircle, BottomRightCircle, LeftCircle, Container } from './styles'
+import { TopRightCircle, BottomRightCircle, Container } from './styles'
 
 function ForgotPassword() {
+    useVerifyAuthentication()
+
     return (
         <WithLogo>
             <Container>
