@@ -1,10 +1,10 @@
 import React from 'react'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect,
-    useHistory
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+  useHistory
 } from 'react-router-dom'
 
 // Páginas disponíveis
@@ -13,50 +13,66 @@ import { CreateAccount } from './pages/CreateAccount'
 import { Login } from './pages/Login'
 import { ForgotPassword } from './pages/ForgotPassword'
 import { Dashboard } from './pages/Dashboard'
+import { Pacientes } from './pages/Pacientes'
+import { Cardapio } from './pages/Cardapio'
+import { Financeiro } from './pages/Financeiro'
+
 
 // Verificar login
-export function useVerifyAuthentication () {
-    const history = useHistory()
-    localStorage.getItem('user') && history.push('/dashboard')
+export function useVerifyAuthentication() {
+  const history = useHistory()
+  localStorage.getItem('user') && history.push('/dashboard')
 }
 
 // Páginas habilitadas
 function Routes() {
-    
-    return (
-        <Router>
-            <Switch>
-                <PrivateRoute path="/dashboard">
-                    <Dashboard />
-                </PrivateRoute>
 
-                <Route path="/forgot-password">
-                    <ForgotPassword />
-                </Route>
+  return (
+    <Router>
+      <Switch>
+        <Route path="/financeiro">
+          <Financeiro />
+        </Route>
 
-                <Route path="/login">
-                    <Login />
-                </Route>
+        <Route path="/cardapio">
+          <Cardapio />
+        </Route>
 
-                <Route path="/create-account">
-                    <CreateAccount />
-                </Route>
+        <Route path="/pacientes">
+          <Pacientes />
+        </Route>
 
-                <Route path="/">
-                  <Hotsite />
-                </Route>
-            </Switch>
-        </Router>)
+        <PrivateRoute path="/dashboard">
+          <Dashboard />
+        </PrivateRoute>
+
+        <Route path="/forgot-password">
+          <ForgotPassword />
+        </Route>
+
+        <Route path="/login">
+          <Login />
+        </Route>
+
+        <Route path="/create-account">
+          <CreateAccount />
+        </Route>
+
+        <Route path="/">
+          <Hotsite />
+        </Route>
+      </Switch>
+    </Router>)
 }
 
 function PrivateRoute({ children, ...rest }) {
-    return (
-      <Route
-        {...rest}
-        render={({ location }) =>
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
         localStorage.getItem('user') ? (
-            children
-          ) : (
+          children
+        ) : (
             <Redirect
               to={{
                 pathname: "/login",
@@ -64,9 +80,9 @@ function PrivateRoute({ children, ...rest }) {
               }}
             />
           )
-        }
-      />
-    );
-  }
+      }
+    />
+  );
+}
 
 export { Routes }
